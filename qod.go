@@ -84,6 +84,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 	"unicode"
 )
 
@@ -110,6 +111,11 @@ func AFH(f *os.File, err error) *os.File {
 func AI(i int, err error) int {
 	ANE(err)
 	return i
+}
+
+func AT(t time.Time, err error) time.Time {
+	ANE(err)
+	return t
 }
 
 // Lines makes reading lines easier. Usage like:
