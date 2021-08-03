@@ -44,7 +44,9 @@ func WriteRow(w io.Writer, vals []string) {
 		if i > 0 {
 			qod.AI(w.Write([]byte("\t")))
 		}
-		qod.AI(w.Write([]byte(strings.ReplaceAll(val, "\t", "        "))))
+		val = strings.ReplaceAll(val, "\t", "        ")
+		val = strings.ReplaceAll(val, "\n", "<newline>")
+		qod.AI(w.Write([]byte(val)))
 	}
 	qod.AI(w.Write([]byte("\n")))
 }
